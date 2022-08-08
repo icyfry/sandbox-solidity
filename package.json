@@ -1,0 +1,24 @@
+{
+  "name": "sandbox-web3",
+  "version": "0.0.1",
+  "description": "sandbox for web3 developments",
+  "dependencies": {
+    "ganache-cli": "^6.12.2",
+    "http-server": "^14.1.1",
+    "solc": "^0.8.15",
+    "web3": "^1.7.5"
+  },
+  "scripts": {
+    "contracts-build": "task contracts-build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icyfry/sandbox-web3.git"
+  },
+  "author": "icyfry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/icyfry/sandbox-web3/issues"
+  },
+  "homepage": "https://github.com/icyfry/sandbox-web3#readme"
+}

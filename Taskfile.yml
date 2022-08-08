@@ -1,0 +1,32 @@
+version: '3'
+
+dotenv: ['.env']
+
+tasks:
+
+  default:
+    cmds:
+      - task --list-all
+
+  init:
+    desc: initalize the workspace
+    cmds:
+      - npm i
+      - cd dapp && npm i
+
+  contracts-build:
+    cmds:
+      - solc -o build/contracts --bin --abi --asm-json --ast-compact-json --asm --overwrite contracts/*.sol
+      # truffle compile
+
+  contracts-deploy-local:
+    desc: deploy contracts to ganache
+    cmds:
+      - node ./scripts/deploy-contract.js SimpleStorage
+      # - node ./scripts/deploy-contract.js HelloBlockchain
+      # truffle migrate
+
+  contracts-test:
+    cmds:
+      - truffle test ./test/Test*.js
+      # truffle test
