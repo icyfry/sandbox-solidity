@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "sandbox for web3 developments",
   "dependencies": {
-    "ganache-cli": "^6.12.2",
-    "http-server": "^14.1.1",
-    "solc": "^0.8.15",
     "web3": "^1.7.5"
   },
   "scripts": {
@@ -20,5 +17,19 @@
   "bugs": {
     "url": "https://github.com/icyfry/sandbox-web3/issues"
   },
-  "homepage": "https://github.com/icyfry/sandbox-web3#readme"
+  "homepage": "https://github.com/icyfry/sandbox-web3#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "@types/chai": "^4.3.3",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.6.5",
+    "@types/prettier": "^2.7.0",
+    "chai": "^4.3.6",
+    "ganache-cli": "^6.12.2",
+    "hardhat": "^2.10.1",
+    "http-server": "^14.1.1",
+    "solc": "^0.8.15",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  }
 }

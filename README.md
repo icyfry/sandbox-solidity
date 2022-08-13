@@ -11,10 +11,19 @@ This repo is a basic **Ethereum** sandbox for local experiments
 * [Learn Blockchain, Solidity, and Full Stack Web3 Development with JavaScript – 32-Hour Course](https://www.youtube.com/watch?v=gyMwXuJrbJQ)
 
     * https://github.com/smartcontractkit/full-blockchain-solidity-course-js#setting-up-your-first-contract
+    * https://github.com/PatrickAlphaC
 
 ## Init workspace
 
 The sandbox workspace is designed to work with WSL on Windows
+
+### EVM
+
+Check connectivity to EVM from WSL
+```
+ping "$(hostname).local"
+nc -zv "$(hostname).local" 7545
+```
 
 ### WSL Setup
 
@@ -22,8 +31,9 @@ the configuration `localhostForwarding=true` need to be setup in [.wslconfig](ht
 
 ### Prerequisites tools
 
-* npx `npm install -g npx`
+* npx `sudo npm install -g npx`
 * nodejs 16.x [nodejs](https://nodejs.org/en/)
+* vue.js [vitejs](https://vitejs.dev/)
 * taskfile [taskfile.dev](https://taskfile.dev/installation/)
 * Truffle & Ganache [trufflesuite](https://trufflesuite.com/)
     * `npm install -g truffle`
@@ -39,6 +49,8 @@ task init
 
 Contracts are located in `./contracts` , to build the contracts with **solc** use the following command. Results will be located in `./build/contracts`
 
+Tests and deploy are using **Hardhat**
+
 Build and run tests on smart contracts
 
 ```
@@ -46,23 +58,20 @@ task contracts-build
 task contracts-test
 ```
 
-Deploy on local blockchain (using Ganache) . To launch ganache use `npx ganache-cli` or ganache Windows app.
+Deploy on local blockchain (using Ganache) . To launch ganache use `npx ganache-cli` or `ganache Windows app` [Ganache docs](https://trufflesuite.com/docs/ganache/)
 
 ```
 task contracts-deploy-local
 ```
 
-Alternatively using **truffle**
-
-```
-truffle compile
-truffle test
-truffle migrate #deploy
-```
-
 ## DApp (Vue.js)
 
 A sample [DApp](https://en.wikipedia.org/wiki/Decentralized_application) using Vue.js framework.
+
+### DApp References
+
+* https://blog.logrocket.com/integrate-web3-into-vue/
+
 
 ## Ethereum client
 

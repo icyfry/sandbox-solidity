@@ -13,20 +13,21 @@ tasks:
     cmds:
       - npm i
       - cd dapp && npm i
+      - npx tsc scripts/deploy.ts
 
   contracts-build:
     cmds:
-      - solc -o build/contracts --bin --abi --asm-json --ast-compact-json --asm --overwrite contracts/*.sol
+      - solc -o build/contracts --include-path node_modules/ --bin --abi --asm-json --ast-compact-json --asm --overwrite contracts/*.sol
       # truffle compile
 
   contracts-deploy-local:
     desc: deploy contracts to ganache
     cmds:
-      - node ./scripts/deploy-contract.js SimpleStorage
-      # - node ./scripts/deploy-contract.js HelloBlockchain
+      - npx hardhat run scripts/deploy.js --network localhost
       # truffle migrate
+      # node ./scripts/deploy-contract.js
 
   contracts-test:
     cmds:
-      - truffle test ./test/Test*.js
-      # truffle test
+      - npx hardhat test
+      # truffle test /test/Test*.js
